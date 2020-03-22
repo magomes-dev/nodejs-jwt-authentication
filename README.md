@@ -1,9 +1,15 @@
-# Exemplo autenticação JWT
-Exemplo simplificado de como implementar uma autenticação JWT em uma API Node.Js
+![logo_prj](https://cdn-media-1.freecodecamp.org/images/1*0ABaK4SrXGUnXgmXqMkZtA.png)
 
-Esta API de exemplo possui apenas dois endpoints:
+Exemplo de como implementar autenticação JWT em uma API Node.Js, persistindo usuarios em banco(MongoDb).
 
-* /users/authenticate - rota pública que aceita solicitações HTTP POST contendo o nome de usuário e a senha no corpo. Se o nome de usuário e a senha estiverem corretos, um token de autenticação JWT será retornado.
+| Method| Routes                | Description                                           |
+|-------|-----------------------|-------------------------------------------------------|
+|POST   | /users/authenticate   | Rota pública, autentica o usuário, retorna token jwt  |
+|POST   | /users/register       | Rota pública. registra um novo usuário.               |
+|GET    | users                 | Rota privada, retorna todos os usuários cadastrados   |
+|GET    | /users/current        | Rota privada, retorna o usuário dono do jwt do request|
+|GET    | /users/:id            | Rota privada, retorna um usuário específico           |
+|PUT    | /users/:id            | Rota privada, altera um usuário específico            |
+|DELETE | /users/:id            | Rota privada, deleta um usuário específico            |
 
-* /users - rota segura que aceita solicitações HTTP GET e retorna uma lista de todos os usuários se o cabeçalho de Autorização HTTP contiver um token JWT válido. Se não houver um token de autenticação ou o token for inválido, será retornada uma resposta 401 Não Autorizado.
-
+Obs: O intuito deste projeto é apenas colocar em prática conteúdos que estou estudando sobre Node.Js
