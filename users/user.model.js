@@ -3,11 +3,6 @@ const uuid = require('uuid');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-    _id: { 
-        type: String, 
-        index: { unique: true }, 
-        default: uuid.v4 
-      },
     username: { type: String, unique: true, required: true },
     hash: { type: String, unique: true, required: true },
     firstName: { type: String, unique: true, required: true },
